@@ -11,25 +11,38 @@
     <div id="root"></div>
 
     <script>
-      window.addEventListener('DOMContentLoaded', () => {
-        // We wait 2 seconds for the React app to generate the form
-        setTimeout(() => {
-          const form = document.querySelector('form');
-          if (form) {
-            form.action = "https://api.web3forms.com/submit";
-            form.method = "POST";
+      // This function forces the form to send data even if React blocks it
+      function enableWeb3Forms() {
+        const form = document.querySelector('form');
+        if (form) {
+          form.onsubmit = async (e) => {
+            e.preventDefault(); // Stop React's default behavior
             
-            // Adding your Access Key
-            const keyInput = document.createElement('input');
-            keyInput.type = 'hidden';
-            keyInput.name = 'access_key';
-            keyInput.value = '96a85d2d-8127-47d2-ab14-c60c00da5801';
-            
-            form.appendChild(keyInput);
-            console.log("Web3Forms connected successfully.");
-          }
-        }, 2000); 
-      });
+            const formData = new FormData(form);
+            formData.append("access_key", "96a85d2d-8127-47d2-ab14-c60c00da5801");
+
+            const response = await fetch("https://api.web3forms.com/submit", {
+              method: "POST",
+              body: formData
+            });
+
+            if (response.ok) {
+              alert("Message sent successfully! Dr. Abdullah will contact you soon.");
+              form.reset();
+            } else {
+              alert("Error sending message. Please try again.");
+            }
+          };
+        }
+      }
+
+      // Check for the form every second until it appears
+      const checker = setInterval(() => {
+        if (document.querySelector('form')) {
+          enableWeb3Forms();
+          clearInterval(checker);
+        }
+      }, 1000);
     </script>
   </body>
 </html>
