@@ -1,0 +1,36 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Default deny
+    match /{document=**} {
+      allow read, write: if false;
+    }
+
+    // Helper functions
+    function isValidId(id) { return id is string && id.size() <= 128 && id.matches('^[a-zA-Z0-9_\\-]+$'); }
+    function incoming() { return request.resource.data; }
+    
+    // Appointment Validation
+    function isValidAppointment(data) {
+      return data.keys().hasAll(['petName', 'ownerName', 'email', 'date', 'time', 'status', 'createdAt'])
+        && data.keys().size() >= 7 && data.keys().size() <= 9
+        && data.petName is string && data.petName.size() >= 1 && data.petName.size() <= 100
+        && data.ownerName is string && data.ownerName.size() >= 1 && data.ownerName.size() <= 100
+        && data.email is string && data.email.size() <= 100 && data.email.matches('^[^@]+@[^@]+\\.[^@]+$')
+        && data.date is string && data.date.size() <= 20
+        && data.time is string && data.time.size() <= 20
+        && data.status in ['pending', 'confirmed', 'cancelled']
+        && data.createdAt == request.time
+        && (!('notes' in data) || (data.notes is string && data.notes.size() <= 1000))
+        && (!('serviceType' in data) || (data.serviceType is string && data.serviceType.size() <= 100));
+    }
+
+    match /appointments/{appointmentId} {
+      // Public can book an appointment
+      allow create: if isValidId(appointmentId) && isValidAppointment(incoming());
+      
+      // Reading restricted for PII safety
+      allow read: if false;
+    }
+  }
+}
