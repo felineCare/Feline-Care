@@ -3,12 +3,33 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My Google AI Studio App</title>
+    <title>Feline Care - Dr. Abdullah</title>
     <script type="module" crossorigin src="./index-DshroOJu.js"></script>
     <link rel="stylesheet" crossorigin href="./index-DOuC7nqj.css">
   </head>
   <body>
     <div id="root"></div>
+
+    <script>
+      window.addEventListener('DOMContentLoaded', () => {
+        // We wait 2 seconds for the React app to generate the form
+        setTimeout(() => {
+          const form = document.querySelector('form');
+          if (form) {
+            form.action = "https://api.web3forms.com/submit";
+            form.method = "POST";
+            
+            // Adding your Access Key
+            const keyInput = document.createElement('input');
+            keyInput.type = 'hidden';
+            keyInput.name = 'access_key';
+            keyInput.value = '96a85d2d-8127-47d2-ab14-c60c00da5801';
+            
+            form.appendChild(keyInput);
+            console.log("Web3Forms connected successfully.");
+          }
+        }, 2000); 
+      });
+    </script>
   </body>
 </html>
-
