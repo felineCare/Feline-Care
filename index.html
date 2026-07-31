@@ -3,10 +3,16 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Google Search Console Verification -->
+    <meta name="google-site-verification" content="twFp2XTGpL8_oREV1tdSVLV8AA2MS-eYVtJJnq6M-fY" />
+
     <title>Feline Care - Dr. Abdullah</title>
+
     <script type="module" crossorigin src="./index-DshroOJu.js"></script>
     <link rel="stylesheet" crossorigin href="./index-DOuC7nqj.css">
   </head>
+
   <body>
     <div id="root"></div>
 
@@ -16,8 +22,8 @@
         const form = document.querySelector('form');
         if (form) {
           form.onsubmit = async (e) => {
-            e.preventDefault(); // Stop React's default behavior
-            
+            e.preventDefault();
+
             const formData = new FormData(form);
             formData.append("access_key", "96a85d2d-8127-47d2-ab14-c60c00da5801");
 
@@ -35,6 +41,17 @@
           };
         }
       }
+
+      // Check for the form every second until it appears
+      const checker = setInterval(() => {
+        if (document.querySelector('form')) {
+          enableWeb3Forms();
+          clearInterval(checker);
+        }
+      }, 1000);
+    </script>
+  </body>
+</html>      }
 
       // Check for the form every second until it appears
       const checker = setInterval(() => {
