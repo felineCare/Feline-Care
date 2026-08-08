@@ -885,5 +885,55 @@ The Knowledgeable Nugget: A low-stress home environment boosts your pet's immune
       document.body.style.overflow = '';
     }
   </script>
+  <script>
+  function setGender(genderVal) {
+    const genderInput = document.getElementById('gender-input');
+    if (genderInput) genderInput.value = genderVal;
+    
+    const maleBtn = document.getElementById('gender-male');
+    const femaleBtn = document.getElementById('gender-female');
+    
+    if (maleBtn && femaleBtn) {
+      if (genderVal === 'Male') {
+        maleBtn.classList.add('bg-[#135c59]', 'text-white');
+        maleBtn.classList.remove('bg-[#fbf9f5]', 'text-[#135c59]');
+        femaleBtn.classList.remove('bg-[#135c59]', 'text-white');
+        femaleBtn.classList.add('bg-[#fbf9f5]', 'text-[#135c59]');
+      } else {
+        femaleBtn.classList.add('bg-[#135c59]', 'text-white');
+        femaleBtn.classList.remove('bg-[#fbf9f5]', 'text-[#135c59]');
+        maleBtn.classList.remove('bg-[#135c59]', 'text-white');
+        maleBtn.classList.add('bg-[#fbf9f5]', 'text-[#135c59]');
+      }
+    }
+  }
+
+  document.getElementById('booking-form')?.addEventListener('submit', async function(e) {
+    e.preventDefault();
+    const btn = this.querySelector('button[type="submit"]');
+    const originalText = btn ? btn.innerHTML : '';
+    if (btn) btn.innerHTML = "<span>Sending...</span>";
+
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: new FormData(this)
+      });
+      const result = await response.json();
+      
+      if (result.success) {
+        alert("تم إرسال طلب الحجز بنجاح!");
+        this.reset();
+      } else {
+        alert("حدث خطأ أثناء الإرسال، حاول مرة أخرى.");
+      }
+    } catch (err) {
+      alert("خطأ في الاتصال بالسيرفر.");
+    } finally {
+      if (btn) btn.innerHTML = originalText;
+    }
+  });
+  </script>
+  
 </body>
 </html>
