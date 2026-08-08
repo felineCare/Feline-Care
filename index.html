@@ -383,4 +383,503 @@
               <span>6 min read</span>
             </div>
             <h3 class="text-xl font-display font-bold text-[#135c59] group-hover:text-[#d9822b] transition-colors mb-2">
-              Creating a Stress-Free 
+              Creating a Stress-Free  Pet Home Environment
+            </h3>
+            <p class="text-xs text-[#2d2420]/75 leading-relaxed line-clamp-2">
+              Simple environmental enrichment to keep your pets happy, active, and safe.
+            </p>
+            <div class="mt-4 flex items-center gap-2 text-[#d9822b] font-bold text-xs">
+              <span>Read Full Article</span>
+              <i class="fa-solid fa-chevron-right group-hover:translate-x-1 transition-transform"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- BOTTOM INFORMATION BAR / FOOTER -->
+  <footer class="bg-[#135c59] text-white pt-16 pb-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid md:grid-cols-3 gap-10 pb-12 border-b border-white/15">
+        
+        <!-- Left: Brand Info & Logo -->
+        <div class="space-y-4">
+          <div class="flex items-center gap-3">
+            <img src="Furry4Ever.png" alt="Furry4Ever Logo" style="max-height: 50px; width: auto;" class="object-contain" />
+            <div class="flex flex-col">
+              <span class="font-display font-extrabold text-xl text-white tracking-tight leading-none">
+                <span>Furry</span><span class="text-[#e05a5a]">4</span><span class="text-[#d9822b]">Ever</span>
+              </span>
+              <span class="text-[10px] font-extrabold uppercase tracking-widest text-[#d9822b] mt-0.5">
+                PETS VETERINARY CARE
+              </span>
+            </div>
+          </div>
+          <p class="text-white/80 leading-relaxed max-w-md">
+            Dedicated to the health, comfort, and wellness of your pets.
+          </p>
+          <div class="flex gap-3 pt-2">
+            <a href="https://www.facebook.com/profile.php?id=61592649189328" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center text-white transition-colors" title="Facebook Page">
+              <i class="fa-brands fa-facebook-f"></i>
+            </a>
+            <a href="https://wa.me/201124333193" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-full bg-[#25D366]/20 hover:bg-[#25D366]/30 flex items-center justify-center text-[#25D366] transition-colors" title="WhatsApp Contact">
+              <i class="fa-brands fa-whatsapp text-lg"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Middle: Quick Navigation Links -->
+        <div>
+          <h4 class="text-lg font-display font-bold mb-4 text-[#d9822b]">Quick Links</h4>
+          <ul class="space-y-2.5 text-sm text-white/80">
+            <li><button onclick="openServicesModal()" class="hover:text-white transition-colors">Services Menu</button></li>
+            <li><a href="#about" class="hover:text-white transition-colors">About Furry4Ever</a></li>
+            <li><a href="#knowledge" class="hover:text-white transition-colors">Pet Healthcare Articles</a></li>
+            <li><button onclick="openBookingModal()" class="hover:text-white transition-colors">Book a Home Visit</button></li>
+          </ul>
+        </div>
+
+        <!-- Right: Full Contact Information Bar -->
+        <div>
+          <h4 class="text-lg font-display font-bold mb-4 text-[#d9822b]">Contact Us</h4>
+          <ul class="space-y-3.5 text-sm text-white/80">
+            <li class="flex items-center gap-3">
+              <div class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center text-[#d9822b]">
+                <i class="fa-solid fa-location-dot"></i>
+              </div>
+              <span>Cairo, Egypt</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <div class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center text-[#d9822b]">
+                <i class="fa-solid fa-phone"></i>
+              </div>
+              <a href="tel:01124333193" class="hover:text-white transition-colors font-medium">01124333193</a>
+            </li>
+            <li class="flex items-center gap-3">
+              <div class="w-8 h-8 rounded-full bg-[#25D366]/20 flex items-center justify-center text-[#25D366]">
+                <i class="fa-brands fa-whatsapp text-base"></i>
+              </div>
+              <a href="https://wa.me/201124333193" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors font-medium">WhatsApp Direct Booking</a>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- Copyright Bar -->
+      <div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-white/60 gap-4">
+        <p>&copy; 2026 Furry4Ever Pets Veterinary Care. All rights reserved.</p>
+        <p class="font-medium text-white/80">"These souls are our mission"</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- MODAL: BOOKING FORM -->
+  <div id="booking-modal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 sm:p-6 overflow-y-auto">
+    <div onclick="closeBookingModal()" class="fixed inset-0 modal-backdrop"></div>
+    
+    <div class="relative z-10 w-full max-w-xl bg-white rounded-3xl shadow-2xl border border-[#135c59]/15 overflow-hidden my-8">
+      
+      <!-- Modal Header -->
+      <div class="bg-[#135c59] text-white p-6 sm:p-8 relative">
+        <button onclick="closeBookingModal()" class="absolute top-6 right-6 w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center text-white transition-colors">
+          <i class="fa-solid fa-xmark text-lg"></i>
+        </button>
+        <div class="flex items-center gap-2 text-[#d9822b] text-xs font-bold uppercase tracking-wider mb-2">
+          <i class="fa-solid fa-wand-magic-sparkles"></i>
+          <span>Home Visit Care Request</span>
+        </div>
+        <h2 class="text-2xl sm:text-3xl font-display font-bold">Book an Appointment</h2>
+        <p class="text-white/80 text-sm mt-1">Fill in the details below and our team will contact you promptly.</p>
+      </div>
+
+      <!-- Form Body -->
+      <div id="booking-form-container" class="p-6 sm:p-8">
+        <form onsubmit="handleBookingSubmit(event)" class="space-y-4">
+          <div>
+            <label class="block text-xs font-bold uppercase tracking-wider text-[#135c59] mb-1">Owner Name *</label>
+            <input type="text" required placeholder="Your full name" class="w-full px-4 py-3 rounded-xl bg-[#fbf9f5] border border-[#135c59]/20 focus:outline-none focus:border-[#135c59] text-sm" />
+          </div>
+
+          <div class="grid grid-cols-2 gap-4">
+            <div>
+              <label class="block text-xs font-bold uppercase tracking-wider text-[#135c59] mb-1">Pet Name *</label>
+              <input type="text" required placeholder="e.g. Bella" class="w-full px-4 py-3 rounded-xl bg-[#fbf9f5] border border-[#135c59]/20 focus:outline-none focus:border-[#135c59] text-sm" />
+            </div>
+            <div>
+              <label class="block text-xs font-bold uppercase tracking-wider text-[#135c59] mb-1">Gender *</label>
+              <div class="grid grid-cols-2 gap-2">
+                <button type="button" id="gender-male" onclick="setGender('Male')" class="py-3 px-2 rounded-xl border border-[#135c59]/20 text-xs font-bold text-[#135c59] bg-[#fbf9f5] transition-all">Male</button>
+                <button type="button" id="gender-female" onclick="setGender('Female')" class="py-3 px-2 rounded-xl border border-[#135c59]/20 text-xs font-bold text-[#135c59] bg-[#fbf9f5] transition-all">Female</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-2 gap-4">
+            <div>
+              <label class="block text-xs font-bold uppercase tracking-wider text-[#135c59] mb-1">Pet Age *</label>
+              <input type="number" required min="0" placeholder="e.g. 3" class="w-full px-4 py-3 rounded-xl bg-[#fbf9f5] border border-[#135c59]/20 focus:outline-none focus:border-[#135c59] text-sm" />
+            </div>
+            <div>
+              <label class="block text-xs font-bold uppercase tracking-wider text-[#135c59] mb-1">Age Unit</label>
+              <select class="w-full px-4 py-3 rounded-xl bg-[#fbf9f5] border border-[#135c59]/20 focus:outline-none focus:border-[#135c59] text-sm">
+                <option value="Years">Years</option>
+                <option value="Months">Months</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-2 gap-4">
+            <div>
+              <label class="block text-xs font-bold uppercase tracking-wider text-[#135c59] mb-1">Phone Number *</label>
+              <input type="tel" required placeholder="01124333193" class="w-full px-4 py-3 rounded-xl bg-[#fbf9f5] border border-[#135c59]/20 focus:outline-none focus:border-[#135c59] text-sm" />
+            </div>
+            <div>
+              <label class="block text-xs font-bold uppercase tracking-wider text-[#135c59] mb-1">Preferred Date *</label>
+              <input type="date" required class="w-full px-4 py-3 rounded-xl bg-[#fbf9f5] border border-[#135c59]/20 focus:outline-none focus:border-[#135c59] text-sm" />
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-xs font-bold uppercase tracking-wider text-[#135c59] mb-1">Reason for Visit</label>
+            <textarea rows="3" placeholder="Describe symptoms, vaccination request, or routine check-up details..." class="w-full px-4 py-3 rounded-xl bg-[#fbf9f5] border border-[#135c59]/20 focus:outline-none focus:border-[#135c59] text-sm"></textarea>
+          </div>
+
+          <button type="submit" class="btn-primary w-full py-3.5 mt-2">
+            <i class="fa-solid fa-circle-check"></i>
+            <span>Confirm Booking Request</span>
+          </button>
+        </form>
+      </div>
+
+      <!-- Success Screen -->
+      <div id="booking-success-container" class="hidden p-8 text-center space-y-4">
+        <div class="w-16 h-16 bg-[#135c59]/10 text-[#135c59] rounded-full flex items-center justify-center mx-auto">
+          <i class="fa-solid fa-circle-check text-4xl"></i>
+        </div>
+        <h3 class="text-2xl font-display font-bold text-[#135c59]">Appointment Request Received!</h3>
+        <p class="text-sm text-[#2d2420]/80 leading-relaxed max-w-md mx-auto">
+          Thank you for choosing Furry4Ever. Our veterinary care coordinator will contact you via phone or WhatsApp shortly to confirm your visit time.
+        </p>
+        <div class="pt-4">
+          <button onclick="closeBookingModal()" class="btn-primary text-sm py-2.5 px-6">
+            <span>Close Window</span>
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- MODAL: SERVICES MENU -->
+  <div id="services-modal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 sm:p-6 overflow-y-auto">
+    <div onclick="closeServicesModal()" class="fixed inset-0 modal-backdrop"></div>
+    
+    <div class="relative z-10 w-full max-w-3xl bg-white rounded-3xl shadow-2xl border border-[#135c59]/15 overflow-hidden my-8">
+      
+      <!-- Header Bar -->
+      <div class="bg-[#135c59] text-white p-6 sm:p-8 relative">
+        <button onclick="closeServicesModal()" class="absolute top-6 right-6 w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center text-white transition-colors">
+          <i class="fa-solid fa-xmark text-lg"></i>
+        </button>
+        <div class="flex items-center gap-2 text-[#d9822b] text-xs font-bold uppercase tracking-wider mb-2">
+          <i class="fa-solid fa-wand-magic-sparkles"></i>
+          <span>Our Veterinary Services</span>
+        </div>
+        <h2 class="text-2xl sm:text-3xl font-display font-bold">Home Visit Care Menu</h2>
+        <p class="text-white/80 text-sm mt-1">Explore our specialized services delivered directly to your home.</p>
+      </div>
+
+      <!-- Services Grid Content -->
+      <div class="p-6 sm:p-8 max-h-[75vh] overflow-y-auto">
+        <div class="grid sm:grid-cols-2 gap-4">
+          
+          <!-- Service 1 -->
+          <div class="p-5 rounded-2xl bg-[#fbf9f5] border border-[#135c59]/10 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between mb-3">
+                <div class="w-11 h-11 rounded-xl bg-emerald-50 text-emerald-700 border border-emerald-200 flex items-center justify-center">
+                  <i class="fa-solid fa-stethoscope text-lg"></i>
+                </div>
+                <span class="text-[10px] font-bold px-2.5 py-1 rounded-full bg-[#135c59]/10 text-[#135c59] uppercase tracking-wider">Popular</span>
+              </div>
+              <h3 class="text-lg font-display font-bold text-[#135c59] mb-1.5">Comprehensive Check-ups</h3>
+              <p class="text-xs text-[#2d2420]/75 leading-relaxed mb-4">Thorough medical health assessments in the comfort and peace of your home.</p>
+            </div>
+            <button onclick="closeServicesModal(); openBookingModal();" class="w-full py-2 px-3 rounded-xl bg-white border border-[#135c59]/20 text-[#135c59] text-xs font-bold hover:bg-[#135c59] hover:text-white transition-all flex items-center justify-center gap-2">
+              <i class="fa-solid fa-calendar-check"></i>
+              <span>Book This Service</span>
+            </button>
+          </div>
+
+          <!-- Service 2 -->
+          <div class="p-5 rounded-2xl bg-[#fbf9f5] border border-[#135c59]/10 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between mb-3">
+                <div class="w-11 h-11 rounded-xl bg-teal-50 text-teal-700 border border-teal-200 flex items-center justify-center">
+                  <i class="fa-solid fa-syringe text-lg"></i>
+                </div>
+              </div>
+              <h3 class="text-lg font-display font-bold text-[#135c59] mb-1.5">Vaccinations & Care</h3>
+              <p class="text-xs text-[#2d2420]/75 leading-relaxed mb-4">Essential preventive immunizations administered by veterinary professionals at home.</p>
+            </div>
+            <button onclick="closeServicesModal(); openBookingModal();" class="w-full py-2 px-3 rounded-xl bg-white border border-[#135c59]/20 text-[#135c59] text-xs font-bold hover:bg-[#135c59] hover:text-white transition-all flex items-center justify-center gap-2">
+              <i class="fa-solid fa-calendar-check"></i>
+              <span>Book This Service</span>
+            </button>
+          </div>
+
+          <!-- Service 3 -->
+          <div class="p-5 rounded-2xl bg-[#fbf9f5] border border-[#135c59]/10 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between mb-3">
+                <div class="w-11 h-11 rounded-xl bg-amber-50 text-amber-700 border border-amber-200 flex items-center justify-center">
+                  <i class="fa-solid fa-clock text-lg"></i>
+                </div>
+              </div>
+              <h3 class="text-lg font-display font-bold text-[#135c59] mb-1.5">Regular Follow-ups</h3>
+              <p class="text-xs text-[#2d2420]/75 leading-relaxed mb-4">Ongoing monitoring and evaluation for post-treatment recovery and chronic conditions.</p>
+            </div>
+            <button onclick="closeServicesModal(); openBookingModal();" class="w-full py-2 px-3 rounded-xl bg-white border border-[#135c59]/20 text-[#135c59] text-xs font-bold hover:bg-[#135c59] hover:text-white transition-all flex items-center justify-center gap-2">
+              <i class="fa-solid fa-calendar-check"></i>
+              <span>Book This Service</span>
+            </button>
+          </div>
+
+          <!-- Service 4 -->
+          <div class="p-5 rounded-2xl bg-[#fbf9f5] border border-[#135c59]/10 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center justify-between mb-3">
+                <div class="w-11 h-11 rounded-xl bg-rose-50 text-rose-700 border border-rose-200 flex items-center justify-center">
+                  <i class="fa-solid fa-heart text-lg"></i>
+                </div>
+                <span class="text-[10px] font-bold px-2.5 py-1 rounded-full bg-[#135c59]/10 text-[#135c59] uppercase tracking-wider">Specialized</span>
+              </div>
+              <h3 class="text-lg font-display font-bold text-[#135c59] mb-1.5">Specialized Nursing Care</h3>
+              <p class="text-xs text-[#2d2420]/75 leading-relaxed mb-4">Dedicated nursing support for senior pets and recovering animals requiring extra gentle care.</p>
+            </div>
+            <button onclick="closeServicesModal(); openBookingModal();" class="w-full py-2 px-3 rounded-xl bg-white border border-[#135c59]/20 text-[#135c59] text-xs font-bold hover:bg-[#135c59] hover:text-white transition-all flex items-center justify-center gap-2">
+              <i class="fa-solid fa-calendar-check"></i>
+              <span>Book This Service</span>
+            </button>
+          </div>
+
+          <!-- Service 5 -->
+          <div class="p-5 rounded-2xl bg-[#fbf9f5] border border-[#135c59]/10 flex flex-col justify-between sm:col-span-2">
+            <div>
+              <div class="flex items-center justify-between mb-3">
+                <div class="w-11 h-11 rounded-xl bg-orange-50 text-orange-700 border border-orange-200 flex items-center justify-center">
+                  <i class="fa-solid fa-scissors text-lg"></i>
+                </div>
+              </div>
+              <h3 class="text-lg font-display font-bold text-[#135c59] mb-1.5">Hygienic Grooming</h3>
+              <p class="text-xs text-[#2d2420]/75 leading-relaxed mb-4">Gentle, stress-free grooming and sanitary care designed to keep pets clean and comfortable.</p>
+            </div>
+            <button onclick="closeServicesModal(); openBookingModal();" class="w-full py-2 px-3 rounded-xl bg-white border border-[#135c59]/20 text-[#135c59] text-xs font-bold hover:bg-[#135c59] hover:text-white transition-all flex items-center justify-center gap-2">
+              <i class="fa-solid fa-calendar-check"></i>
+              <span>Book This Service</span>
+            </button>
+          </div>
+
+        </div>
+
+        <div class="mt-6 p-4 rounded-2xl bg-[#135c59]/5 border border-[#135c59]/10 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <div class="text-center sm:text-left">
+            <p class="text-xs font-bold text-[#135c59]">Need custom medical care for your pet?</p>
+            <p class="text-xs text-[#2d2420]/70">Contact us directly via WhatsApp for tailored visit planning.</p>
+          </div>
+          <button onclick="closeServicesModal(); openBookingModal();" class="btn-primary text-xs py-2.5 px-5 whitespace-nowrap">
+            Book Appointment Now
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL: KNOWLEDGE ARTICLE READER -->
+  <div id="knowledge-modal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 sm:p-6 overflow-y-auto">
+    <div onclick="closeKnowledgeModal()" class="fixed inset-0 modal-backdrop"></div>
+    
+    <div class="relative z-10 w-full max-w-2xl max-h-[80vh] bg-white rounded-3xl overflow-hidden shadow-2xl flex flex-col my-8">
+      <button onclick="closeKnowledgeModal()" class="absolute top-6 right-6 z-10 bg-white/80 hover:bg-white p-3 rounded-full text-[#135c59] transition-colors shadow-md">
+        <i class="fa-solid fa-xmark text-lg"></i>
+      </button>
+
+      <div class="overflow-y-auto p-8 md:p-10">
+        <div class="flex items-center gap-2 text-[#d9822b] text-xs font-bold uppercase tracking-wider mb-3">
+          <i class="fa-solid fa-book-open"></i>
+          <span id="article-meta">Category • Read Time</span>
+        </div>
+        <h3 id="article-title" class="text-2xl md:text-3xl font-display font-bold text-[#135c59] mb-6">
+          Article Title
+        </h3>
+        
+        <div id="article-content" class="text-[#2d2420]/80 leading-relaxed text-sm whitespace-pre-line space-y-4">
+          <!-- Article Content Loaded via JS -->
+          </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- EMBEDDED VANILLA JAVASCRIPT -->
+  <script>
+    // Initialize Lucide Icons as fallback
+    function refreshIcons() {
+      if (typeof lucide !== 'undefined' && lucide.createIcons) {
+        lucide.createIcons();
+        }
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      refreshIcons();
+    });
+
+    // Mobile Navigation Menu Toggle Logic
+    function toggleMobileMenu() {
+      const menu = document.getElementById('mobile-menu');
+      const barsIcon = document.getElementById('menu-icon-bars');
+      const closeIcon = document.getElementById('menu-icon-close');
+if (menu.classList.contains('hidden')) {
+        menu.classList.remove('hidden');
+        barsIcon.classList.add('hidden');
+        closeIcon.classList.remove('hidden');
+      } else {
+        menu.classList.add('hidden');
+        barsIcon.classList.remove('hidden');
+        closeIcon.classList.add('hidden');
+      }
+    }
+
+    // Booking Modal Logic
+    function openBookingModal() {
+      const modal = document.getElementById('booking-modal');
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeBookingModal() {
+      const modal = document.getElementById('booking-modal');
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+      document.body.style.overflow = '';
+      
+      setTimeout(() => {
+        document.getElementById('booking-form-container').classList.remove('hidden');
+        document.getElementById('booking-success-container').classList.add('hidden');
+      }, 300);
+    }
+
+    // Gender toggle in booking form
+    let selectedGender = 'Male';
+    function setGender(gender) {
+      selectedGender = gender;
+      const maleBtn = 
+      document.getElementById('gender-male');
+      const femaleBtn = document.getElementById('gender-female');
+
+      if (gender === 'Male') {
+        maleBtn.className = "py-3 px-2 rounded-xl border-2 border-[#135c59] text-xs font-bold text-white bg-[#135c59] transition-all shadow-sm";
+        femaleBtn.className = "py-3 px-2 rounded-xl border border-[#135c59]/20 text-xs font-bold text-[#135c59] bg-[#fbf9f5] transition-all";
+      } else {
+        femaleBtn.className = "py-3 px-2 rounded-xl border-2 border-[#135c59] text-xs font-bold text-white bg-[#135c59] transition-all shadow-sm";
+        maleBtn.className = "py-3 px-2 rounded-xl border border-[#135c59]/20 text-xs font-bold text-[#135c59] bg-[#fbf9f5] transition-all";
+      }
+      }
+    setGender('Male');
+
+    function handleBookingSubmit(e) {
+      e.preventDefault();
+      document.getElementById('booking-form-container').classList.add('hidden');
+      document.getElementById('booking-success-container').classList.remove('hidden');
+    }
+
+    // Services Modal Logic
+    function openServicesModal() {
+      const modal = 
+      document.getElementById('services-modal');
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeServicesModal() {
+      const modal = document.getElementById('services-modal');
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+      document.body.style.overflow = '';
+    }
+
+    // Articles Data for Knowledge Hub Reader
+    const articles = {
+      1: {
+        category: 'Behavior',
+        readTime: '5 min read',
+        title: 'Understanding Pet Body Language',
+        content: `Pets are masters of silent communication. While humans use words, animals use a complex system of tail wags, posture, and ear signals.
+
+1. The Tail: The Pet Mood Meter
+• Curved High Tail: A friendly "Hello!" They are happy and comfortable.
+• Slow Swish or Stiff Wag: Caution! Your pet is focused or evaluating a situation.
+• Tucked Tail: Fear or feeling overwhelmed. Needs gentle comfort.
+
+2. The Eyes & Ears
+• The Slow Blink: The ultimate sign of love and trust in cats and calm dogs.
+• Relaxed Ears: Content, happy, and feeling safe.
+
+The Knowledgeable Nugget: Understanding subtle body language helps prevent stress and builds a stronger bond with your pets!`
+      },
+      2: {
+        category: 'Health',
+        readTime: '8 min read',
+        title: 'Senior Pet Wellness & Routine Checks',
+        content: `As our pets age, their medical needs evolve. Pets over age 7-10 enter their golden years where preventive wellness checks make a huge difference in longevity and comfort.
+
+1. Why Regular Home Examinations Matter
+Pets naturally mask discomfort or pain. Routine home wellness exams allow veterinarians to evaluate mobility, dental health, kidney function, and heart health before small issues become emergencies.
+
+2. Key Diagnostic Health Indicators
+• Mobility & Joints: Watching for subtle stair-climbing changes or stiffness.
+• Kidney & Organ Health: Routine blood panels help manage chronic conditions early.
+• Hydration & Weight: Monitoring subtle changes in appetite or water intake.
+
+The Knowledgeable Nugget: Early routine health baseline checks give your senior pets years of active, comfortable life!`
+      },
+      3: {
+        category: 'Lifestyle',
+        readTime: '6 min read',
+        title: 'Creating a Stress-Free Pet Home Environment',
+        content: `To us, home is a refuge; to our pets, it is their entire world. Creating an enriched, pet-friendly home reduces anxiety and promotes natural wellness.
+
+1. Safe Rest & Hideaway Zones
+Ensure your pets have quiet, undisturbed sleeping nooks away from high-traffic household areas.
+2. Mental Enrichment
+Use puzzle feeders, interactive toys, and safe window perches to keep their minds engaged and active.
+
+The Knowledgeable Nugget: A low-stress home environment boosts your pet's immune system and overall happiness!`
+      }
+    };
+
+    function openKnowledgeModal(id) {
+      const article = articles[id];
+      if (!article) return;
+
+      document.getElementById('article-meta').textContent = `${article.category} • ${article.readTime}`;
+      document.getElementById('article-title').textContent = article.title;
+      document.getElementById('article-content').textContent = article.content;
+      const modal = document.getElementById('knowledge-modal');
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeKnowledgeModal() {
+      const modal = document.getElementById('knowledge-modal');
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+      document.body.style.overflow = '';
+    }
+  </script>
+</body>
+</html>
