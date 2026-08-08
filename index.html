@@ -496,64 +496,67 @@
       </div>
 
       <!-- Form Body -->
-      <div id="booking-form-container" class="p-6 sm:p-8">
-        <form id="booking-form">
-  <input type="hidden" name="access_key" value="96a85d2d-8127-47d2-ab14-c60c00da5801">
-  <div>
-    <label class="block text-xs font-bold upper...">
-    <input type="text" required placeholder="Your Name">
+<div id="booking-form-container" class="p-6 sm:p-8">
+  <form id="booking-form" class="space-y-4">
+    <input type="hidden" name="access_key" value="96a85d2d-8127-47d2-ab14-c60c00da5801">
+    
+    <div>
+      <label class="block text-xs font-bold uppercase tracking-wider text-[#135c59] mb-1">Owner Name *</label>
+      <input type="text" name="owner_name" required placeholder="Your Name" class="w-full px-4 py-3 rounded-xl bg-[#fbf9f5] border border-[#135c59]/20 focus:outline-none focus:border-[#135c59] text-sm" />
+    </div>
 
-
-          <div class="grid grid-cols-2 gap-4">
-            <div>
-              <label class="block text-xs font-bold uppercase tracking-wider text-[#135c59] mb-1">Pet Name *</label>
-              <input type="text" required placeholder="e.g. Bella" class="w-full px-4 py-3 rounded-xl bg-[#fbf9f5] border border-[#135c59]/20 focus:outline-none focus:border-[#135c59] text-sm" />
-            </div>
-            <div>
-              <label class="block text-xs font-bold uppercase tracking-wider text-[#135c59] mb-1">Gender *</label>
-              <div class="grid grid-cols-2 gap-2">
-                <button type="button" id="gender-male" onclick="setGender('Male')" class="py-3 px-2 rounded-xl border border-[#135c59]/20 text-xs font-bold text-[#135c59] bg-[#fbf9f5] transition-all">Male</button>
-                <button type="button" id="gender-female" onclick="setGender('Female')" class="py-3 px-2 rounded-xl border border-[#135c59]/20 text-xs font-bold text-[#135c59] bg-[#fbf9f5] transition-all">Female</button>
-              </div>
-            </div>
-          </div>
-
-          <div class="grid grid-cols-2 gap-4">
-            <div>
-              <label class="block text-xs font-bold uppercase tracking-wider text-[#135c59] mb-1">Pet Age *</label>
-              <input type="number" required min="0" placeholder="e.g. 3" class="w-full px-4 py-3 rounded-xl bg-[#fbf9f5] border border-[#135c59]/20 focus:outline-none focus:border-[#135c59] text-sm" />
-            </div>
-            <div>
-              <label class="block text-xs font-bold uppercase tracking-wider text-[#135c59] mb-1">Age Unit</label>
-              <select class="w-full px-4 py-3 rounded-xl bg-[#fbf9f5] border border-[#135c59]/20 focus:outline-none focus:border-[#135c59] text-sm">
-                <option value="Years">Years</option>
-                <option value="Months">Months</option>
-              </select>
-            </div>
-          </div>
-
-          <div class="grid grid-cols-2 gap-4">
-            <div>
-              <label class="block text-xs font-bold uppercase tracking-wider text-[#135c59] mb-1">Phone Number *</label>
-              <input type="tel" required placeholder="01124333193" class="w-full px-4 py-3 rounded-xl bg-[#fbf9f5] border border-[#135c59]/20 focus:outline-none focus:border-[#135c59] text-sm" />
-            </div>
-            <div>
-              <label class="block text-xs font-bold uppercase tracking-wider text-[#135c59] mb-1">Preferred Date *</label>
-              <input type="date" required class="w-full px-4 py-3 rounded-xl bg-[#fbf9f5] border border-[#135c59]/20 focus:outline-none focus:border-[#135c59] text-sm" />
-            </div>
-          </div>
-
-          <div>
-            <label class="block text-xs font-bold uppercase tracking-wider text-[#135c59] mb-1">Reason for Visit</label>
-            <textarea rows="3" placeholder="Describe symptoms, vaccination request, or routine check-up details..." class="w-full px-4 py-3 rounded-xl bg-[#fbf9f5] border border-[#135c59]/20 focus:outline-none focus:border-[#135c59] text-sm"></textarea>
-          </div>
-
-          <button type="submit" class="btn-primary w-full py-3.5 mt-2">
-            <i class="fa-solid fa-circle-check"></i>
-            <span>Confirm Booking Request</span>
-          </button>
-        </form>
+    <div class="grid grid-cols-2 gap-4">
+      <div>
+        <label class="block text-xs font-bold uppercase tracking-wider text-[#135c59] mb-1">Pet Name *</label>
+        <input type="text" name="pet_name" required placeholder="e.g. Bella" class="w-full px-4 py-3 rounded-xl bg-[#fbf9f5] border border-[#135c59]/20 focus:outline-none focus:border-[#135c59] text-sm" />
       </div>
+      <div>
+        <label class="block text-xs font-bold uppercase tracking-wider text-[#135c59] mb-1">Gender *</label>
+        <input type="hidden" name="gender" id="gender-input" value="Male">
+        <div class="grid grid-cols-2 gap-2">
+          <button type="button" id="gender-male" onclick="setGender('Male')" class="py-3 px-2 rounded-xl border border-[#135c59]/20 text-xs font-bold text-[#135c59] bg-[#fbf9f5] transition-all">Male</button>
+          <button type="button" id="gender-female" onclick="setGender('Female')" class="py-3 px-2 rounded-xl border border-[#135c59]/20 text-xs font-bold text-[#135c59] bg-[#fbf9f5] transition-all">Female</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-2 gap-4">
+      <div>
+        <label class="block text-xs font-bold uppercase tracking-wider text-[#135c59] mb-1">Pet Age *</label>
+        <input type="number" name="pet_age" required min="0" placeholder="e.g. 3" class="w-full px-4 py-3 rounded-xl bg-[#fbf9f5] border border-[#135c59]/20 focus:outline-none focus:border-[#135c59] text-sm" />
+      </div>
+      <div>
+        <label class="block text-xs font-bold uppercase tracking-wider text-[#135c59] mb-1">Age Unit</label>
+        <select name="age_unit" class="w-full px-4 py-3 rounded-xl bg-[#fbf9f5] border border-[#135c59]/20 focus:outline-none focus:border-[#135c59] text-sm">
+          <option value="Years">Years</option>
+          <option value="Months">Months</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-2 gap-4">
+      <div>
+        <label class="block text-xs font-bold uppercase tracking-wider text-[#135c59] mb-1">Phone Number *</label>
+        <input type="tel" name="phone" required placeholder="01124333193" class="w-full px-4 py-3 rounded-xl bg-[#fbf9f5] border border-[#135c59]/20 focus:outline-none focus:border-[#135c59] text-sm" />
+      </div>
+      <div>
+        <label class="block text-xs font-bold uppercase tracking-wider text-[#135c59] mb-1">Preferred Date *</label>
+        <input type="date" name="preferred_date" required class="w-full px-4 py-3 rounded-xl bg-[#fbf9f5] border border-[#135c59]/20 focus:outline-none focus:border-[#135c59] text-sm" />
+      </div>
+    </div>
+
+    <div>
+      <label class="block text-xs font-bold uppercase tracking-wider text-[#135c59] mb-1">Reason for Visit</label>
+      <textarea name="reason" rows="3" placeholder="Describe symptoms, vaccination request, or routine check-up details..." class="w-full px-4 py-3 rounded-xl bg-[#fbf9f5] border border-[#135c59]/20 focus:outline-none focus:border-[#135c59] text-sm"></textarea>
+    </div>
+
+    <button type="submit" class="btn-primary w-full py-3.5 mt-2">
+      <i class="fa-solid fa-circle-check"></i>
+      <span>Confirm Booking Request</span>
+    </button>
+  </form>
+</div>
+
 
       <!-- Success Screen -->
       <div id="booking-success-container" class="hidden p-8 text-center space-y-4">
